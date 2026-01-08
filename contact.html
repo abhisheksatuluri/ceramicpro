@@ -90,19 +90,23 @@
                 flex-direction: row;
             }
 
+            /* 
+              Refactored to Sticky Layout 
+              Allows scrolling if content is too tall, but sticks otherwise.
+            */
             .panel-left {
-                position: fixed;
                 width: 50%;
                 height: 100vh;
+                position: sticky;
                 top: 0;
-                left: 0;
-                z-index: 10;
+                overflow-y: auto;
+                /* Enable scroll if content exceeds viewport */
             }
 
             .panel-right {
                 width: 50%;
-                margin-left: 50%;
                 min-height: 100vh;
+                /* Removed margin-left: 50% as we are now using flex flow */
             }
         }
     </style>
@@ -145,9 +149,8 @@
 
     <main class="split-layout">
 
-        <!-- Left Panel: Info & Map (Fixed on Desktop) -->
-        <section
-            class="panel-left bg-[#080808] border-r border-white/5 flex flex-col relative lg:fixed order-2 lg:order-1">
+        <!-- Left Panel: Info & Map (Sticky on Desktop) -->
+        <section class="panel-left bg-[#080808] border-r border-white/5 flex flex-col relative order-2 lg:order-1">
             <!-- Info Top -->
             <div class="p-8 md:p-12 lg:p-16 flex-grow flex flex-col justify-center z-10 pointer-events-none">
                 <p class="text-cp-blue text-sm font-mono tracking-widest uppercase mb-4 animate-in">Visit the Studio</p>
