@@ -128,8 +128,10 @@ html.lenis body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 2000;
+  z-index: 9999;
   mix-blend-mode: normal;
+  pointer-events: none;
+  /* Let clicks pass through the header container to underlying elements if needed, but see child pointer-events */
 }
 
 @media (min-width: 1024px) {
@@ -156,7 +158,9 @@ html.lenis body {
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 2001;
+  z-index: 10000;
+  pointer-events: auto;
+  /* Ensure this is clickable */
   /* Debugging helper: background: rgba(255,0,0,0.1); */
 }
 
