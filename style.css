@@ -146,15 +146,24 @@ html.lenis body {
 
 .hamburger {
   cursor: pointer;
-  width: 30px;
-  height: 20px;
+  width: 48px;
+  /* Increased touch target */
+  height: 48px;
+  /* Increased touch target */
+  display: flex;
+  /* Center the spans */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   z-index: 2001;
+  /* Debugging helper: background: rgba(255,0,0,0.1); */
 }
 
 .hamburger span {
   display: block;
-  width: 100%;
+  width: 30px;
+  /* Specific width for bars separate from container */
   height: 2px;
   background-color: var(--text-primary);
   position: absolute;
@@ -162,21 +171,20 @@ html.lenis body {
 }
 
 .hamburger span:nth-child(1) {
-  top: 0;
+  transform: translateY(-9px);
 }
 
 .hamburger span:nth-child(2) {
-  top: 9px;
+  transform: translateY(0);
 }
 
 .hamburger span:nth-child(3) {
-  top: 18px;
+  transform: translateY(9px);
 }
 
 /* Hamburger Active State */
 .hamburger.active span:nth-child(1) {
-  top: 9px;
-  transform: rotate(45deg);
+  transform: translateY(0) rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -184,8 +192,7 @@ html.lenis body {
 }
 
 .hamburger.active span:nth-child(3) {
-  top: 9px;
-  transform: rotate(-45deg);
+  transform: translateY(0) rotate(-45deg);
 }
 
 /* Mobile Overlay Menu */
