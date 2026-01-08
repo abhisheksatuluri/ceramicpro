@@ -279,55 +279,51 @@
 
                 const panels = gsap.utils.toArray('.service-panel');
 
-                ScrollTrigger.matchMedia({
-                    // Desktop: Enable Pinning/Stacking
-                    "(min-width: 1024px)": function () {
-                        panels.forEach((panel, i) => {
+                // Enable Pinning/Stacking for ALL devices
+                panels.forEach((panel, i) => {
 
-                            // Determine z-index dynamically if not set in class
-                            // But we set them manually in HTML (10, 20, 30) for reliability
+                    // Determine z-index dynamically if not set in class
+                    // But we set them manually in HTML (10, 20, 30) for reliability
 
-                            ScrollTrigger.create({
+                    ScrollTrigger.create({
+                        trigger: panel,
+                        start: "top top",
+                        pin: true,
+                        pinSpacing: false, // Allows next panel to slide UP over this one
+                        end: "+=100%", // Keeps it pinned for window height duration
+                        scrub: true,
+                    });
+
+                    // Visual: Scale down the panel as it gets covered (Depth effect)
+                    const content = panel.querySelector('.content-wrapper');
+                    const bg = panel.querySelector('.panel-bg');
+
+                    if (content && i !== panels.length - 1) {
+                        gsap.to(content, {
+                            scale: 0.9,
+                            opacity: 0,
+                            ease: "none",
+                            scrollTrigger: {
                                 trigger: panel,
                                 start: "top top",
-                                pin: true,
-                                pinSpacing: false, // Allows next panel to slide UP over this one
-                                end: "+=100%", // Keeps it pinned for window height duration
-                                scrub: true,
-                            });
-
-                            // Visual: Scale down the panel as it gets covered (Depth effect)
-                            const content = panel.querySelector('.content-wrapper');
-                            const bg = panel.querySelector('.panel-bg');
-
-                            if (content && i !== panels.length - 1) {
-                                gsap.to(content, {
-                                    scale: 0.9,
-                                    opacity: 0,
-                                    ease: "none",
-                                    scrollTrigger: {
-                                        trigger: panel,
-                                        start: "top top",
-                                        end: "bottom top",
-                                        scrub: true
-                                    }
-                                });
-                            }
-
-                            if (bg) {
-                                gsap.fromTo(bg,
-                                    { scale: 1 },
-                                    {
-                                        scale: 1.1, ease: "none", scrollTrigger: {
-                                            trigger: panel,
-                                            start: "top bottom",
-                                            end: "bottom top",
-                                            scrub: true
-                                        }
-                                    }
-                                );
+                                end: "bottom top",
+                                scrub: true
                             }
                         });
+                    }
+
+                    if (bg) {
+                        gsap.fromTo(bg,
+                            { scale: 1 },
+                            {
+                                scale: 1.1, ease: "none", scrollTrigger: {
+                                    trigger: panel,
+                                    start: "top bottom",
+                                    end: "bottom top",
+                                    scrub: true
+                                }
+                            }
+                        );
                     }
                 });
             }

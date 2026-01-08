@@ -278,7 +278,7 @@
             );
 
             // 1.5 Home Page Curtain Stacking
-            if (window.gsap && window.ScrollTrigger && window.innerWidth > 1024) {
+            if (window.gsap && window.ScrollTrigger) {
                 ScrollTrigger.create({
                     trigger: "#hero-panel",
                     start: "top top",
@@ -294,28 +294,18 @@
             if (window.gsap && window.ScrollTrigger) {
                 const container = document.querySelector(".services-container");
 
-                // Only enable horizontal scroll logic on Desktop for better UX
-                if (window.innerWidth > 768) {
-                    gsap.to(container, {
-                        x: () => -(container.scrollWidth - window.innerWidth) + "px",
-                        ease: "none",
-                        scrollTrigger: {
-                            trigger: "#services-wrapper",
-                            pin: true,
-                            scrub: 1,
-                            end: () => "+=" + container.offsetWidth, // Scroll distance relative to width
-                            invalidateOnRefresh: true
-                        }
-                    });
-                } else {
-                    // On Mobile, we just let it stack naturally (CSS handles width: 100vw for children)
-                    // We remove the horizontal flex layout via style adjustment if needed, 
-                    // or rely on the overflow-x logic if we wanted swipe.
-                    // For this implementation, the CSS .services-container { flex-wrap: wrap } 
-                    // is handled by GSAP matchMedia ideally, but for simplicity:
-                    container.style.width = "100%";
-                    container.style.flexDirection = "column";
-                }
+                // Enable horizontal scroll logic on ALL devices
+                gsap.to(container, {
+                    x: () => -(container.scrollWidth - window.innerWidth) + "px",
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "#services-wrapper",
+                        pin: true,
+                        scrub: 1,
+                        end: () => "+=" + container.offsetWidth, // Scroll distance relative to width
+                        invalidateOnRefresh: true
+                    }
+                });
             }
         });
     </script>
