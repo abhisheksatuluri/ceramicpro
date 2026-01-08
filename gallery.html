@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceramic Pro Vijayawada | The Collection</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cp-black': '#030303',
+                        'cp-white': '#F5F5F7',
+                        'cp-grey': '#86868b',
+                        'cp-blue': '#007AFF',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gallery-wrapper {
+            padding: 10vh 2vw;
+            display: flex;
+            justify-content: center;
+            gap: 2vw;
+            overflow: visible;
+        }
+
+        .gallery-col {
+            width: 30vw;
+            display: flex;
+            flex-direction: column;
+            gap: 2vw;
+        }
+
+        .gallery-item {
+            width: 100%;
+            height: 40vh;
+            /* Default */
+            overflow: hidden;
+            position: relative;
+            border-radius: 4px;
+        }
+
+        .gallery-item.tall {
+            height: 60vh;
+        }
+
+        .gallery-item.short {
+            height: 30vh;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .gallery-wrapper {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .gallery-col {
+                width: 100%;
+            }
+
+            .gallery-item {
+                height: 50vh !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-capsule">
+        <div class="nav-logo">CP. Vijayawada</div>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">Ceramic Pro</a>
+        <a href="services.html" class="nav-link">Kavaca PPF</a>
+        <a href="gallery.html" class="nav-link active">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <div class="mobile-logo">CP.</div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <a href="index.html" class="mobile-menu-link">Home</a>
+        <a href="about.html" class="mobile-menu-link">Ceramic Pro</a>
+        <a href="services.html" class="mobile-menu-link">Kavaca PPF</a>
+        <a href="gallery.html" class="mobile-menu-link">Gallery</a>
+        <a href="contact.html" class="mobile-menu-link">Contact</a>
+    </div>
+
+    <main class="bg-cp-black min-h-screen">
+
+        <header class="h-[40vh] flex items-end justify-center pb-12 px-6">
+            <h1 class="text-5xl md:text-8xl font-bold text-cp-white tracking-tighter text-center">
+                MASTERPIECES
+            </h1>
+        </header>
+
+        <!-- Parallax Gallery Container -->
+        <div class="gallery-wrapper">
+
+            <!-- Column 1 (Slow) -->
+            <div class="gallery-col" data-speed="0.9">
+                <div class="gallery-item tall">
+                    <img src="./Public/The Perfect Reflection.jpeg" class="gallery-img" alt="Porsche">
+                </div>
+                <div class="gallery-item short">
+                    <img src="./Public/Macro Water Beading.jpeg" class="gallery-img" alt="Detailing">
+                </div>
+                <div class="gallery-item">
+                    <img src="./Public/Paint Correction In-Progress.jpeg" class="gallery-img" alt="Audi">
+                </div>
+                <div class="gallery-item tall">
+                    <img src="./Public/The Kavaca Material.jpeg" class="gallery-img" alt="Mercedes">
+                </div>
+            </div>
+
+            <!-- Column 2 (Fast - Center) -->
+            <div class="gallery-col" data-speed="1.2">
+                <div class="gallery-item short">
+                    <img src="./Public/The Perfect Reflection.jpeg" class="gallery-img" alt="Tesla">
+                </div>
+                <div class="gallery-item tall">
+                    <img src="./Public/Macro Water Beading.jpeg" class="gallery-img" alt="BMW M4">
+                </div>
+                <div class="gallery-item">
+                    <img src="./Public/Paint Correction In-Progress.jpeg" class="gallery-img" alt="Coating">
+                </div>
+                <div class="gallery-item tall">
+                    <img src="./Public/The Kavaca Material.jpeg" class="gallery-img" alt="Lamborghini">
+                </div>
+            </div>
+
+            <!-- Column 3 (Normal) -->
+            <div class="gallery-col" data-speed="1.0">
+                <div class="gallery-item">
+                    <img src="./Public/The Perfect Reflection.jpeg" class="gallery-img" alt="Range Rover">
+                </div>
+                <div class="gallery-item tall">
+                    <img src="./Public/Macro Water Beading.jpeg" class="gallery-img" alt="Ferrari">
+                </div>
+                <div class="gallery-item short">
+                    <img src="./Public/Paint Correction In-Progress.jpeg" class="gallery-img" alt="Polish">
+                </div>
+                <div class="gallery-item">
+                    <img src="./Public/The Kavaca Material.jpeg" class="gallery-img" alt="Black Car">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center py-24">
+            <a href="contact.html"
+                class="text-cp-grey hover:text-cp-white uppercase tracking-widest text-sm transition-colors border-b border-white/20 pb-1">Request
+                Portfolio</a>
+        </div>
+
+    </main>
+
+    <!-- Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <!-- Global Script -->
+    <script src="script.js"></script>
+
+    <!-- Parallax Logic -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (window.gsap && window.ScrollTrigger && window.innerWidth > 768) {
+                gsap.registerPlugin(ScrollTrigger);
+
+                const cols = document.querySelectorAll('.gallery-col');
+
+                cols.forEach(col => {
+                    const speed = col.getAttribute('data-speed');
+
+                    gsap.to(col, {
+                        y: () => (1 - speed) * 400, // Move subtly based on speed factor
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: ".gallery-wrapper",
+                            start: "top bottom",
+                            end: "bottom top",
+                            scrub: 0
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceramic Pro Vijayawada | The Legacy</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cp-black': '#030303',
+                        'cp-white': '#F5F5F7',
+                        'cp-grey': '#86868b',
+                        'cp-blue': '#007AFF',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .about-panel {
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-capsule">
+        <div class="nav-logo">CP. Vijayawada</div>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">Ceramic Pro</a>
+        <a href="services.html" class="nav-link">Kavaca PPF</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <div class="mobile-logo">CP.</div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <a href="index.html" class="mobile-menu-link">Home</a>
+        <a href="about.html" class="mobile-menu-link">Ceramic Pro</a>
+        <a href="services.html" class="mobile-menu-link">Kavaca PPF</a>
+        <a href="gallery.html" class="mobile-menu-link">Gallery</a>
+        <a href="contact.html" class="mobile-menu-link">Contact</a>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <header class="h-[70vh] w-full flex flex-col items-center justify-center bg-cp-black relative px-6">
+            <p class="text-cp-blue text-sm font-mono tracking-widest uppercase mb-6 hero-anim">Since 2010</p>
+            <h1
+                class="text-6xl md:text-8xl lg:text-9xl font-bold text-cp-white tracking-tighter text-center leading-[0.9] hero-anim">
+                GLOBAL<br>LEADER
+            </h1>
+            <p class="mt-8 text-cp-grey max-w-xl text-center text-lg hero-anim">
+                Born in the aerospace industry, refined for the automotive world. We are the pioneers of nanoceramic
+                surface protection.
+            </p>
+        </header>
+
+        <!-- Stacking Content Wrapper -->
+        <div class="relative w-full bg-cp-black">
+
+            <!-- Panel 1: The Network -->
+            <section class="about-panel bg-[#050505] z-10">
+                <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+                    <div>
+                        <h2 class="text-4xl md:text-6xl font-bold text-cp-white mb-6">World Wide<br>Dominance</h2>
+                        <p class="text-lg text-cp-grey leading-relaxed mb-8">
+                            Ceramic Pro is not just a product; it is a global phenomenon. With over 5,000 certified
+                            installers in 80+ countries, we set the standard for the industry.
+                        </p>
+                        <div class="grid grid-cols-2 gap-8">
+                            <div>
+                                <div class="text-4xl font-bold text-cp-white stat-number mb-1">80+</div>
+                                <div class="text-sm text-cp-grey uppercase tracking-wider">Countries</div>
+                            </div>
+                            <div>
+                                <div class="text-4xl font-bold text-cp-white stat-number mb-1">5000+</div>
+                                <div class="text-sm text-cp-grey uppercase tracking-wider">Centers</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative h-[50vh] w-full overflow-hidden rounded-lg opacity-60">
+                        <!-- Abstract Map / Network Image -->
+                        <img src="./Public/Macro Water Beading.jpeg"
+                            class="rounded-lg opacity-60 mix-blend-screen hover:opacity-100 transition-opacity duration-500"
+                            alt="Nano Technology">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Panel 2: The Technology -->
+            <section class="about-panel bg-[#0a0a0a] z-20">
+                <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+                    <div class="lg:order-2">
+                        <h2 class="text-4xl md:text-6xl font-bold text-cp-white mb-6">Molecular<br>Perfection</h2>
+                        <p class="text-lg text-cp-grey leading-relaxed mb-8">
+                            Our coatings utilize advanced nanotechnology to fill the microscopic pores of your paint.
+                            This creates a permanent, glass-like shield that is impossible to wash off.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-4 text-cp-white">
+                                <span class="w-8 h-[1px] bg-cp-blue"></span> Thermal Resistance up to 1200°C
+                            </li>
+                            <li class="flex items-center gap-4 text-cp-white">
+                                <span class="w-8 h-[1px] bg-cp-blue"></span> SGS Certified Hardness
+                            </li>
+                            <li class="flex items-center gap-4 text-cp-white">
+                                <span class="w-8 h-[1px] bg-cp-blue"></span> Anti-Graffiti Properties
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="relative h-[50vh] w-full overflow-hidden rounded-lg lg:order-1 opacity-60">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop"
+                            class="absolute inset-0 w-full h-full object-cover" alt="Lab Technology">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Panel 3: Vijayawada -->
+            <section class="about-panel bg-[#000000] z-30">
+                <div class="absolute inset-0 z-0">
+                    <img src="./Public/The Kavaca Material.jpeg" class="w-full h-full object-cover opacity-40">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+                </div>
+
+                <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+                    <h2 class="text-4xl md:text-7xl font-bold text-cp-white mb-8">Vijayawada's<br>Finest Studio</h2>
+                    <p class="text-lg md:text-2xl text-cp-grey leading-relaxed mb-12">
+                        We have brought the world's best protection technology to Andhra Pradesh. Our climate-controlled
+                        studio ensures the perfect application environment for every vehicle.
+                    </p>
+                    <a href="contact.html"
+                        class="inline-block px-10 py-4 border border-white/20 rounded-full text-cp-white uppercase tracking-widest hover:bg-cp-white hover:text-cp-black transition-all duration-300">
+                        Visit Our Studio
+                    </a>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-black py-12 px-6 border-t border-white/10 relative z-40">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-cp-grey text-sm">
+                <p>&copy; 2024 Ceramic Pro Vijayawada.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="index.html" class="hover:text-cp-white">Home</a>
+                    <a href="contact.html" class="hover:text-cp-white">Contact</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <!-- Global Script -->
+    <script src="script.js"></script>
+
+    <!-- Stacking Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.from(".hero-anim", {
+                y: 50, opacity: 0, duration: 1, stagger: 0.2, ease: "power3.out", delay: 0.2
+            });
+
+            if (window.gsap && window.ScrollTrigger && window.innerWidth >= 1024) {
+                gsap.registerPlugin(ScrollTrigger);
+
+                const panels = gsap.utils.toArray(".about-panel");
+                panels.forEach((panel, i) => {
+                    ScrollTrigger.create({
+                        trigger: panel,
+                        start: "top top",
+                        pin: true,
+                        pinSpacing: false,
+                        end: "+=100%",
+                        scrub: true
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

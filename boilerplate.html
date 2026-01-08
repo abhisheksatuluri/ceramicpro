@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceramic Pro Vijayawada | Page Title</title>
+    
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Optional: Tailwind for Utility Classes inside content -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'cp-black': '#030303',
+              'cp-white': '#F5F5F7',
+              'cp-grey': '#86868b',
+              'cp-blue': '#007AFF',
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body>
+
+    <!-- Desktop Navigation (Capsule) -->
+    <nav class="nav-capsule">
+        <div class="nav-logo">CP. Vijayawada</div>
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="#" class="nav-link">Ceramic Pro</a>
+        <a href="#" class="nav-link">Kavaca PPF</a>
+        <a href="#" class="nav-link">Gallery</a>
+        <a href="#" class="nav-link">Contact</a>
+    </nav>
+
+    <!-- Mobile Header (Visible < 1024px) -->
+    <div class="mobile-header">
+        <div class="mobile-logo">CP.</div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Fullscreen Overlay -->
+    <div class="mobile-menu-overlay">
+        <a href="index.html" class="mobile-menu-link">Home</a>
+        <a href="#" class="mobile-menu-link">Ceramic Pro</a>
+        <a href="#" class="mobile-menu-link">Kavaca PPF</a>
+        <a href="#" class="mobile-menu-link">Gallery</a>
+        <a href="#" class="mobile-menu-link">Contact</a>
+    </div>
+
+    <!-- Page Content -->
+    <main>
+        <!-- Your Page Content Here -->
+        <section style="height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;">
+            <div>
+                <h1 style="font-size: clamp(2rem, 5vw, 4rem); font-weight: 700; margin-bottom: 20px;">New Page Title</h1>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    This is a standardized page using the global boilerplate.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Required Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    
+    <!-- Global Script (Navigation & Smooth Scroll) -->
+    <script src="script.js"></script>
+</body>
+</html>
