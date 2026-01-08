@@ -55,10 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log("Navigation elements:", { hamburger, mobileMenu, totalLinks: mobileLinks.length });
 
   if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', (e) => {
-      console.log("Hamburger clicked!");
-      e.preventDefault(); // Prevent accidental unwanted behaviors
-      e.stopPropagation(); // Stop bubbling
+    const toggleMenu = (e) => {
+      console.log(`Hamburger triggered by ${e.type}!`);
+      if (e.cancelable) e.preventDefault(); // Prevent double-firing (touch + click)
+      e.stopPropagation();
 
       // Toggle Classes
       hamburger.classList.toggle('active');
@@ -72,7 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (lenis) lenis.start();
         document.body.style.overflow = '';
       }
-    });
+    };
+
+    // Add both click and touchstart for instant mobile response
+    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('touchstart', toggleMenu, { passive: false });
 
     // Close menu when a link is clicked
     mobileLinks.forEach(link => {
